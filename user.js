@@ -7,6 +7,7 @@ const cookieParser = require("cookie-parser")
 const dotEnv = require("dotenv")
 const User = require('./models/User.model')
 const userRouter = require('./routes/user.routes')
+const authRouter = require('./routes/auth.routes')
 
 
 const app = express()
@@ -50,10 +51,10 @@ app.use((req, res, next) => {
     next()
 
 })
-
-// app.use("/auth",authRouter)
-
 // Call routers 
+
+app.use("/auth",authRouter)
+
 app.use("/user",userRouter)
 
 // app.use("/post",postRouter)

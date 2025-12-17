@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 const postSchema = new mongoose.Schema({
     user: {
-        type: String,
+        type: String, // User Id
         required: true
     },
     contentType: {
@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
         required: true
     },
     content: {
-        type: String,
+        type: String, // Add only string for now , the string might include link of video or image
         required: true
     },
     caption: {
@@ -49,5 +49,20 @@ const postSchema = new mongoose.Schema({
 
 
 })
+
+
+// Create one more schema and store postSchema in array will pick in PHASE-2
+// const posts = new mongoose.Schema(
+// { postId : id,
+//  posts : [{},{}],
+//  userId : {userDetails},
+//  likes : [],
+//  comments : [],
+//  isLikesDisabled : false,
+//  isCommentDisabled : false,
+//  type : Srting,
+//  caption : String
+// })
+
 
 const Post = mongoose.model('Post', postSchema)

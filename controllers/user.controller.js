@@ -16,7 +16,7 @@ const COURSE_TYPE = ["mern",'java',"da"]
 
 
 // Sign Up
-async function singUp(req, res, next) {
+async function signUp(req, res, next) {
     const body = req.body
     const batch = body.batch
     const location = body.centreLocation
@@ -135,6 +135,10 @@ async function signIn(req, res, next) {
 
         // Dont return password to client
 
+        // Send token in response for now!
+        // user.token = token
+
+
         // Step 4 : Success call
         res.success(200, "ok", user)
 
@@ -168,7 +172,7 @@ async function profile( req, res, next) {
 
 }
 
-module.exports = { singUp, signIn, profile }
+module.exports = { signUp, signIn, profile }
 
 
 

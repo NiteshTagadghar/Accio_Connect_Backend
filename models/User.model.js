@@ -43,7 +43,18 @@ const userSchema = new mongoose.Schema({
     courseType : {
         type : String, // MERN,JAVA,DA
         required :true
+    },
+    isPlaced : {
+        type : Boolean, // True if student placed or false
+        required : true
+    },
+    organisationName : {
+        type : String // If placed can specify orgnaization name
+    },
+    role :{
+        type : String // If placed what is the current role in organization
     }
+
 }, { timestamps: true })
 
 
